@@ -45,5 +45,6 @@ public class MonumentsActivity extends AppCompatActivity {
     private void setDatas()
     {
         dataMonuments = new ArrayList<Monuments>();
+        dataMonuments.add(new Monuments("Tour Eiffel","45","5"));
     }
 }
