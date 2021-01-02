@@ -46,11 +46,11 @@
         android:layout_weight="30">
 
         <Button
-            android:id="@+id/btGdVValider"
+            android:id="@+id/btGdVAskAdvice"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
-            android:text="Valider"
+            android:text="Demander conseil"
             android:textSize="30dp"/>
     </LinearLayout>
 </LinearLayout>
