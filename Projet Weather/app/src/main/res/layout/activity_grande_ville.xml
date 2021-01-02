@@ -32,10 +32,18 @@
             android:textSize="30dp"
             android:gravity="center"/>
     </LinearLayout>
-    <Spinner
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="20"/>
+        android:layout_height="match_parent">
+        <Spinner
+            android:id="@+id/spinnerVilles"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:layout_width="0dp">
+        </Spinner>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
