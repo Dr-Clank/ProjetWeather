@@ -1,6 +1,8 @@
 package com.example.weatherapp;
 
-public class Monuments {
+import java.io.Serializable;
+
+public class Monuments implements Serializable {
 
     public Monuments(String nom, String latitude, String longitude) {
         this.nom = nom;
