@@ -2,7 +2,9 @@ package com.example.weatherapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
         initbutton();
 
-        buttonMonuments.setOnClickListener((v) -> {
-
+        buttonMonuments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent listeMonuments = new Intent(getApplicationContext(), MonumentsActivity.class);
+                startActivity(listeMonuments);
+            }
         });
 
         buttonGrandeVille.setOnClickListener((v) -> {
