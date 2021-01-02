@@ -8,16 +8,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.weatherapp.databinding.ActivityGrandeVilleBinding;
+
 import java.util.ArrayList;
 
 public class GrandeVilleActivity extends AppCompatActivity {
     private Spinner spinnerVilles;
-    private GrandeVilleActivityBinding binding;
+    private ActivityGrandeVilleBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = GrandeVilleActivityBinding.inflate(getLayoutInflater());
+        binding = ActivityGrandeVilleBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view;
 
