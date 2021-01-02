@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,16 +33,13 @@ public class MonumentsActivity extends AppCompatActivity {
         adapter = new RecyclerViewMonumentAdapter(dataMonuments);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnItemTouchListener(new RecyclerTouchMonumentListener(this, recyclerView, new RecyclerTouchMonumentListener() {
-            @Override
-            public void onClick(View view, int position) {
-                Monuments monMonument = dataMonuments.get(position);
-                Intent detail = new Intent(getApplicationContext(), DetailPatientActivity.class);
-                detail.putExtra("PATIENT_DETAIL", monMonument);
-                startActivity(detail);
+        recyclerView.addOnItemTouchListener(new RecyclerTouchMonumentListener(this,recyclerView,((view, position) -> {
+            Monuments monMonument = dataMonuments.get(position);
+            Intent detail = new Intent(getApplicationContext(), ConseilActivity.class);
+            detail.putExtra("MONUMENT_DETAIL", monMonument);
+            startActivity(detail);
+        })));
 
-            }
-        }));
     }
 
     private void setDatas()
