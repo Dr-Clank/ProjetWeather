@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GrandeVilleActivity"
+    tools:context=".MonumentsActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -15,14 +15,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Les grandes villes"
+            android:text="Les monuments"
             android:textSize="40dp"
             android:textAlignment="center"
             android:background="@color/purple_500"
             android:textColor="@color/white"/>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGrandeVilles"
+        android:id="@+id/rvMonuments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="80"/>
