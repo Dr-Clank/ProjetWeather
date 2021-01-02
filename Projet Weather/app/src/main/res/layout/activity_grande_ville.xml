@@ -21,9 +21,36 @@
             android:background="@color/purple_500"
             android:textColor="@color/white"/>
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGrandeVilles"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"/>
+        android:layout_weight="20">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Choissisez votre ville parmit celle ci-dessous"
+            android:textSize="30dp"
+            android:gravity="center"/>
+    </LinearLayout>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30">
+
+        <Button
+            android:id="@+id/btGdVValider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:text="Valider"
+            android:textSize="30dp"/>
+    </LinearLayout>
 </LinearLayout>
