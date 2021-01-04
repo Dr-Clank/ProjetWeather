@@ -41,6 +41,7 @@ public class MonumentsActivity extends AppCompatActivity {
             Monuments monMonument = dataMonuments.get(position);
             Intent detail = new Intent(getApplicationContext(), ConseilActivity.class);
             detail.putExtra("MONUMENT_DETAIL", monMonument);
+            detail.putExtra("BOOLEAN",false);
             startActivity(detail);
         })));
 
@@ -54,6 +55,5 @@ public class MonumentsActivity extends AppCompatActivity {
         Type listUserType = new TypeToken<List<Monuments>>() {
         }.getType();
         dataMonuments = gson.fromJson(jsonFileString, listUserType);
-
     }
 }

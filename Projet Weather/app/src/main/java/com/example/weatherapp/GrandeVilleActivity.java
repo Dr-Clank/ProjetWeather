@@ -3,9 +3,11 @@ package com.example.weatherapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.weatherapp.databinding.ActivityGrandeVilleBinding;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 
 public class GrandeVilleActivity extends AppCompatActivity {
     private Spinner spinnerVilles;
+    private Button buttonAskAdvice;
     private ActivityGrandeVilleBinding binding;
 
     @Override
@@ -23,10 +26,24 @@ public class GrandeVilleActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        initializeVilles();
+        initialize();
+
+        buttonAskAdvice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Ville maVille = (Ville) spinnerVilles.getSelectedItem();
+                Intent detail = new Intent(getApplicationContext(), ConseilActivity.class);
+                detail.putExtra("VILLE_DETAIL", maVille);
+                detail.putExtra("BOOLEAN", true);
+                startActivity(detail);
+            }
+        });
     }
 
-    private void initializeVilles() {
+    private void initialize() {
+        spinnerVilles = findViewById(R.id.spinnerVilles);
+        buttonAskAdvice = findViewById(R.id.btGdVAskAdvice);
+
         ArrayList<Ville> villes = new ArrayList<>();
         villes.add(new Ville("Paris"));
         villes.add(new Ville("Marseille"));
