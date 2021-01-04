@@ -26,4 +26,9 @@ public class Monuments implements Serializable {
     private String latitude;
     private String longitude;
 
+    @Override
+    public String toString()
+    {
+        return this.nom;
+    }
 }

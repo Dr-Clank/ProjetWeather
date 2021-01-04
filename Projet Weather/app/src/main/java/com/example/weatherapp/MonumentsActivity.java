@@ -7,8 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.Type;
 
 public class MonumentsActivity extends AppCompatActivity {
 
@@ -24,7 +28,7 @@ public class MonumentsActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rvMonuments);
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false );
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setFocusable(false);
 
@@ -33,7 +37,7 @@ public class MonumentsActivity extends AppCompatActivity {
         adapter = new RecyclerViewMonumentAdapter(dataMonuments);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnItemTouchListener(new RecyclerTouchMonumentListener(this,recyclerView,((view, position) -> {
+        recyclerView.addOnItemTouchListener(new RecyclerTouchMonumentListener(this, recyclerView, ((view, position) -> {
             Monuments monMonument = dataMonuments.get(position);
             Intent detail = new Intent(getApplicationContext(), ConseilActivity.class);
             detail.putExtra("MONUMENT_DETAIL", monMonument);
@@ -42,9 +46,14 @@ public class MonumentsActivity extends AppCompatActivity {
 
     }
 
-    private void setDatas()
-    {
+    private void setDatas() {
         dataMonuments = new ArrayList<Monuments>();
-        dataMonuments.add(new Monuments("Tour Eiffel","45","5"));
+        String jsonFileString = Utils.getJsonFromAssets(getApplicationContext(), "monuments.json");
+
+        Gson gson = new Gson();
+        Type listUserType = new TypeToken<List<Monuments>>() {
+        }.getType();
+        dataMonuments = gson.fromJson(jsonFileString, listUserType);
+
     }
 }
