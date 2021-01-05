@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Choissisez un monuments pour avoir conseil"
+            android:text="Choisissez un monuments pour obtenir un conseil"
             android:gravity="center"
             android:textSize="25dp"/>
 
