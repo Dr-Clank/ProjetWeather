@@ -90,13 +90,13 @@ public class ConseilActivity extends AppCompatActivity {
         if(moyTemp>15) {
             tempStatement = true;
         }
-        if(humidityStatement >=66)
+        if(moyHumidity >=66)
         {
             humidityStatement = 2;
         }
         else
         {
-            if(humidityStatement>=33)
+            if(moyHumidity>=33)
             {
                 humidityStatement =1;
             }
