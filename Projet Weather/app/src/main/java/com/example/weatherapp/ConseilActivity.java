@@ -85,8 +85,8 @@ public class ConseilActivity extends AppCompatActivity {
         String imageToDisplay;
         int humidityStatement =0;
         boolean tempStatement = false;
-        textViewHumidite.setText(String.valueOf(moyHumidity));
-        textViewTemperature.setText(String.valueOf(moyTemp));
+        textViewHumidite.setText(String.valueOf(String.format("%.2f", moyHumidity))+" %");
+        textViewTemperature.setText(String.valueOf(String.format("%.2f", moyTemp)) +" °C");
         if(moyTemp>15) {
             tempStatement = true;
         }

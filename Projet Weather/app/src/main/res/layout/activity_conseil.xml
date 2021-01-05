@@ -54,7 +54,7 @@
             android:layout_height="match_parent"
             android:layout_weight="50"
             android:layout_margin="20dp"
-            android:textSize="250dp"
+            android:textSize="25dp"
             android:textAlignment="center"/>
 
     </LinearLayout>
@@ -83,7 +83,8 @@
             android:layout_height="match_parent"
             android:layout_margin="30dp"
             android:textSize="25dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:text="Agenda"/>
     </LinearLayout>
 
 </LinearLayout>
